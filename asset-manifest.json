@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ListApp-React/static/css/main.f439b852.css",
+    "main.js": "/ListApp-React/static/js/main.6fba6f68.js",
+    "static/js/787.7a7b73f9.chunk.js": "/ListApp-React/static/js/787.7a7b73f9.chunk.js",
+    "index.html": "/ListApp-React/index.html",
+    "main.f439b852.css.map": "/ListApp-React/static/css/main.f439b852.css.map",
+    "main.6fba6f68.js.map": "/ListApp-React/static/js/main.6fba6f68.js.map",
+    "787.7a7b73f9.chunk.js.map": "/ListApp-React/static/js/787.7a7b73f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f439b852.css",
+    "static/js/main.6fba6f68.js"
+  ]
+}
