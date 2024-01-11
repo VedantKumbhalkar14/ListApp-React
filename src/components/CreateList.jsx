@@ -9,8 +9,10 @@ const CreateList = ({list,selectedLists,createMode,setCreateMode,moveListItem,ha
       <Listview items={list.filter(item=>item.list_number==selectedLists[1]+1)} listNo={selectedLists[1]+1} createMode={createMode} setCreateMode={setCreateMode} isNewList={true} moveItemBackToList={moveItemBackToList} />
       <Listview items={list.filter(item=>item.list_number==selectedLists[1])} listNo={selectedLists[1]} createMode={createMode} setCreateMode={setCreateMode} moveListItem={moveListItem} isNewList={false} moveItemBackToList={moveItemBackToList} />
     </div>
-    <button onClick={handleCancel}>Cancel</button>
-    <button onClick={handleUpdate}>Update</button>
+    <div className='d-flex flex-row-reverse mt-2' style={{width:"70vw"}}>
+    <button  className='btn btn-outline-secondary m-2' onClick={handleCancel}>Cancel</button>
+    <button className='btn btn-primary m-2' onClick={handleUpdate}>Update</button>
+    </div>
     </>
   )
 }
