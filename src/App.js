@@ -10,7 +10,8 @@ function App() {
   let selectedListsRef=useRef(selectedLists);
   let [listNos,setListNos]=useState([]);
   let [createMode,setCreateMode]=useState(false);
-  let [listHistory,setListHistory]=useState([])
+  let [listHistory,setListHistory]=useState([]);
+  let [loading,setLoading]=useState(true);
   
   
   const handleSelectedLists=(val,operation)=>{
@@ -66,6 +67,7 @@ function App() {
         if(item.list_number>maxListNo) maxListNo=item.list_number;
       });
       setListNos([...Array(maxListNo).keys()].map(num=>num+1));
+      setLoading(false);
       
     }).catch(err=>{
       console.log(err)
@@ -96,7 +98,12 @@ function App() {
   }
   return (
     <div className="App">
-      { !createMode && <div>
+      {
+        loading && <div className='text-center m-5'><div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div></div>
+      }
+      { !createMode && !loading && <div>
       <div className='text-center'>
         <h2 className='my-2'>List Creation</h2>
         <button onClick={handleCreateList} className='btn btn-primary my-2'>Create a new list</button>
@@ -111,7 +118,7 @@ function App() {
       </div>
       </div>}
       {
-        createMode && <div>
+        createMode && loading && <div>
           <CreateList list={list} selectedLists={[...selectedListsRef.current]} createMode={createMode} setCreateMode={setCreateMode} setList={setList} moveListItem={moveListItem} handleCancel={handleCancel} handleUpdate={handleUpdate} moveItemBackToList={moveItemBackToList} />
         </div>
       }
