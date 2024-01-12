@@ -118,7 +118,7 @@ function App() {
       </div>
       </div>}
       {
-        createMode && loading && <div>
+        createMode && !loading && <div>
           <CreateList list={list} selectedLists={[...selectedListsRef.current]} createMode={createMode} setCreateMode={setCreateMode} setList={setList} moveListItem={moveListItem} handleCancel={handleCancel} handleUpdate={handleUpdate} moveItemBackToList={moveItemBackToList} />
         </div>
       }
