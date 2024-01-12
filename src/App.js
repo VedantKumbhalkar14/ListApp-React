@@ -88,7 +88,7 @@ function App() {
   }
   const handleCreateList=()=>{
     if(selectedListsRef.current.length!=2) {
-      document.getElementById("error-box").innerHTML="<p>You should create exactly two lists to create a new list </p>"
+      document.getElementById("error-box").innerHTML="<p>You should select exactly two lists to create a new list </p>"
     }
     else{ 
       setCreateMode(true);

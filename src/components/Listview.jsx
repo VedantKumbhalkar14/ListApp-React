@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import ListItemCard from './ListItemCard'
 
-const Listview = ({items,listNo,handleSelectedLists,createMode,setCreateMode,moveListItem,isNewList,moveItemBackToList}) => {
+const Listview = ({items,listNo,handleSelectedLists,createMode,setCreateMode,moveListItem,isNewList,moveItemBackToList,showArrow}) => {
 
   const [isChecked,setIsChecked] = useState(false);
   const checkedRef=useRef(isChecked);
@@ -27,7 +27,7 @@ const Listview = ({items,listNo,handleSelectedLists,createMode,setCreateMode,mov
         }
         {
             items.map((item)=>{
-                return <ListItemCard key={item.id} id={item.id} name={item.name} description={item.description} moveListItem={moveListItem} createMode={createMode} isNewList={isNewList} moveItemBackToList={moveItemBackToList} className="m-2"/>
+                return <ListItemCard key={item.id} id={item.id} name={item.name} description={item.description} moveListItem={moveListItem} createMode={createMode} isNewList={isNewList} moveItemBackToList={moveItemBackToList} showArrow={showArrow} className="m-2"/>
             })
         }
     </div>
